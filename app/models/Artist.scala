@@ -1,4 +1,4 @@
-package model
+package models
 
 case class Artist(name:String, country:String)
 
@@ -27,11 +27,11 @@ object Artist {
 	}
 
 	def fetchByNameOrCountry(name:String, country:String):Seq[Artist] = {
-		availableArtist.filter(a=>a.name.contains(name) || a=>a.country == country)
+		availableArtist.filter( a=>a.name.contains(name) || a.country == country)
 	}
 
 	def fetchByNameAndCountry(name:String, country:String):Seq[Artist] = {
-		availableArtist.filter(a=>a.name.contains(name) && a=>a.country == country)
+		availableArtist.filter(a=>a.name.contains(name) && a.country == country)
 	}
 
 }

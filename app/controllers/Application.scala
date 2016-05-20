@@ -6,10 +6,10 @@ import models._
 object Application extends Controller {
   // Actionは関数
   def index = Action {
-    Ok(views.html.main())
+    Ok(views.html.main)
   }
 
   def listArtist = Action{
-  	Ok(view.html.home(Artist.fetch))
+  	Ok(views.html.home(Artist.fetch))
   }
 }
