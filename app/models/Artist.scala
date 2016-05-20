@@ -13,9 +13,25 @@ object Artist {
 	Artist("Franz Liszt","Austria"),
 	Artist("Giuseppe Fortunino Francesco Verdi","Austria"))
 
-	def fetchByName(name:String){
+
+	def fetch : Seq[Artist] = {
+		availableArtist
+	}
+
+	def fetchByName(name:String):Seq[Artist] = {
 		availableArtist.filter(a=>a.name.contains(name))
 	}
 
-	
+	def fetchByCountry(country:String):Seq[Artist] = {
+		availableArtist.filter(a=>a.country == country)
+	}
+
+	def fetchByNameOrCountry(name:String, country:String):Seq[Artist] = {
+		availableArtist.filter(a=>a.name.contains(name) || a=>a.country == country)
+	}
+
+	def fetchByNameAndCountry(name:String, country:String):Seq[Artist] = {
+		availableArtist.filter(a=>a.name.contains(name) && a=>a.country == country)
+	}
+
 }
