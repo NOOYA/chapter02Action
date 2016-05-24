@@ -17,7 +17,7 @@ object Application extends Controller {
     Ok(views.html.home(Artist.fetchByName(name)))
   }
 
-  def search(name:String , country:String): Action ={
+  def search(name:String , country:String)= Action{
     var result = Artist.fetchByNameOrCountry(name,country)
     if(result.isEmpty){
       NoContent
